@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASP.NETMVC.Models
+namespace MVC_ASPNET.Models
 {
     public class Contato
     {

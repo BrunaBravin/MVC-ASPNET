@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ASP.NETMVC.Context;
-using ASP.NETMVC.Models;
+using MVC_ASPNET.Context;
+using MVC_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace ASP.NETMVC.Controllers
+namespace MVC_ASPNET.Controllers
 {
     public class ContatoController : Controller
     {
@@ -31,7 +31,7 @@ namespace ASP.NETMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(Contato contato) // importar ASP.NETMVC.Models;
+        public IActionResult Criar(Contato contato) // importar MVC_ASPNET.Models;
         {
             if (ModelState.IsValid) //verificar se os dados são validos, por ex: se o campo nome for obrigatório e não tiver sido preenchido, vai cair no else ao invés do if, pq não será valido
             {
@@ -53,7 +53,7 @@ namespace ASP.NETMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(Contato contato) // importar ASP.NETMVC.Models;
+        public IActionResult Editar(Contato contato) // importar MVC_ASPNET.Models;
         {
             var contatoBanco = _context.Contatos.Find(contato.Id);
 

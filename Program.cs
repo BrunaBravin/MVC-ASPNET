@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ASP.NETMVC.Context;
+using MVC_ASPNET.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
