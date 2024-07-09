@@ -1,5 +1,4 @@
-@model MVC_ASPNET.Models.Contato //não é um enumerable como na index.cshtml pq estou trabalhando com um só e não com uma lista
-
+@model MVC_ASPNET.Models.Contato
 @{
     ViewData["Title"] = "Criar novo contato";
 }
@@ -10,7 +9,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Criar"> @*manda para o Criar POST*@
+        <form asp-action="Criar">
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
@@ -41,9 +40,9 @@
 <script>
     function mascaraTelefone(event) {
         const telefone = event.target.value
-            .replace(/\D/g, '') // Remove caracteres não numéricos
-            .replace(/^(\d{2})(\d)/g, '($1) $2') // Coloca parênteses em volta dos dois primeiros dígitos
-            .replace(/(\d)(\d{4})$/, '$1-$2'); // Coloca hífen entre o quinto e o sexto dígitos
+            .replace(/\D/g, '')
+            .replace(/^(\d{2})(\d)/g, '($1) $2')
+            .replace(/(\d)(\d{4})$/, '$1-$2');
         event.target.value = telefone;
     }
 

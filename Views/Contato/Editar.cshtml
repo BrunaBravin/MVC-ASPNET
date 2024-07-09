@@ -1,5 +1,4 @@
-@model MVC_ASPNET.Models.Contato //não é um enumerable como na index.cshtml pq estou trabalhando com um só e não com uma lista
-
+@model MVC_ASPNET.Models.Contato
 @{
     ViewData["Title"] = "Editar contato";
 }
@@ -10,7 +9,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Editar"> @*manda para o Criar POST*@
+        <form asp-action="Editar">
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />

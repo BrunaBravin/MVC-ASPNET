@@ -21,8 +21,8 @@ namespace MVC_ASPNET.Controllers
 
         public IActionResult Index()
         {
-            var contatos = _context.Contatos.ToList(); //Pegando todos os meus contatos e colocando em uma lista
-            return View(contatos); //passando a lista para a view
+            var contatos = _context.Contatos.ToList();
+            return View(contatos);
         }
 
         public IActionResult Criar()
@@ -31,13 +31,13 @@ namespace MVC_ASPNET.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(Contato contato) // importar MVC_ASPNET.Models;
+        public IActionResult Criar(Contato contato)
         {
-            if (ModelState.IsValid) //verificar se os dados são validos, por ex: se o campo nome for obrigatório e não tiver sido preenchido, vai cair no else ao invés do if, pq não será valido
+            if (ModelState.IsValid)
             {
                 _context.Contatos.Add(contato);
                 _context.SaveChanges();
-                return RedirectToAction(nameof(Index)); //redirecionamos para o Index, no caso a nossa tela de listagem
+                return RedirectToAction(nameof(Index));
             }
             return View(contato);
         }
@@ -53,7 +53,7 @@ namespace MVC_ASPNET.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(Contato contato) // importar MVC_ASPNET.Models;
+        public IActionResult Editar(Contato contato)
         {
             var contatoBanco = _context.Contatos.Find(contato.Id);
 
@@ -99,8 +99,3 @@ namespace MVC_ASPNET.Controllers
         }
     }
 }
-// temos dois criar, o primeiro é do tipo get, se n há nenhum [http] é
-// pq já é get, é opcional colocar as chaves quando é get
-// temos dois criar pois quando acessamos a pagina pela primeira vez é carregado o primeiro Criar, que aponta para a View
-// com os campos vazios, a partir do momento que eu clico em "Criar" na view eu mando as informações para a controller, onde cairá no Criar POST
-// onde pego essas informações e salvo no Banco de dados
